@@ -1,5 +1,4 @@
 // Social colors
-
 $linkedin: #4393BB;
 $pinterest: #C92228;
 $twitter: #4099ff;
@@ -7,5 +6,35 @@ $facebook: #3B5998;
 $google-plus: #db5a3c;
 
 // Nadvence color
-
 $nadvence: #28c3ab;
+
+.facebook-back{
+  background-color: $facebook;
+  &:hover {
+    background-color: $facebook;
+  }
+}
+.twitter-back{
+  background-color: $twitter;
+   &:hover {
+     background-color: $twitter;
+  }
+}
+.google-plus-back{
+  background-color: $google-plus;
+   &:hover {
+     background-color: $google-plus;
+  }
+}
+
+.no_underline{
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.modify-btn{
+  border-color:transparent !important;
+}
+
+

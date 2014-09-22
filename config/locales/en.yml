@@ -1,0 +1,52 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# To learn more, please read the Rails Internationalization guide
+# available at http://guides.rubyonrails.org/i18n.html.
+
+en:
+  homes:
+    main:
+      project_name: "Text counter"
+      title: "Text Tool"
+      description: "Text tool: number of words, paragraphs, time to read, words frequency"
+      h1: "Text counter"
+      description: "Website to get analytics and counts about any text"
+      placeholder: "Enter your text"
+      apostrophe: "Ignore apostrophes"
+      tiret: "Ignore dashes"
+      stop_word: "Ignore stop words"
+      twitter_character: "Remaining characters for Twitter: "
+      h3_count: "Counter"
+      characters_count: "Characters (without spaces)"
+      words_count: "Words"
+      paragraphes_count: "Paragraphs"
+      sentences_count: "Sentences"
+      longest_sentence: "Longest sentence"
+      h3_time: "Time"
+      lecture_time: "Reading time"
+      writing_time: "Handwriting time"
+      taping_time: "Tapping time"
+      elocution_time: "Speaking time"
+      h3_size: "Size"
+      lines_size: "Number of lines (computer) :"
+      pages_size: "Number of pages (computer) :"
+      paper_lines_size: "Number of lines (paper) :"
+      paper_pages_size: "Number of pages (paper) :"
+      h3_frequency: "Frequency"
+      frequency_calculation: "Get words frequency (search for synonyms)"

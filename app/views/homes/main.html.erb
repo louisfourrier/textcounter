@@ -1,0 +1,535 @@
+<% provide(:project_name, t('.project_name'))%>
+<% provide(:title, t('.title'))%>
+<% provide(:description, t('.description'))%>
+
+<div class="row" style="height: 100%;">
+	<div class="col-md-6 col-xs-12">
+		
+		<br />
+		<div class="row">
+
+			<div class="col-md-12">
+				<div id="option">
+					
+					<input type="checkbox" id="apostrophes" name="apostrophes" class="option css-checkbox">
+					<label for="apostrophes" class="css-label"><span></span><%= t '.apostrophe' %></label>
+
+					<input type="checkbox" id="tiret" name="tiret" class="option css-checkbox">
+					<label for="tiret" class="css-label"><span></span><%= t '.tiret' %></label>
+
+					<input type="checkbox" id="stop_word" name="stop_word" class="option css-checkbox">
+					<label for="stop_word" class="css-label"><span></span><%= t '.stop_word' %></label>
+
+					
+				</div>
+			</div>
+
+			<br/>
+			<br/>
+			<div class="col-md-12">
+				<textarea rows="20" class="col-md-12 champ_count" id="main_text" placeholder="<%= t '.placeholder' %>"></textarea>
+				<span> <%= t '.twitter_character' %> </span><span id="twitter_length"></span>
+			</div>
+
+		</div>
+
+	</div>
+
+	<div class="col-md-6 col-xs-12 side-column">
+		<div class="col-md-12">
+
+
+			<section id="basic">
+				<h3 class="nadvence-header"><%= t '.h3_count' %></h3>
+
+				<div class="col-md-12 col-xs-12">
+
+					<div class="btn btn-primary">
+						<div class="intitule">
+							<%= t '.characters_count' %>
+						</div>
+						<span id="nb_caracteres" class="resultat"> 0 </span>
+						(<span id="nb_caracteres_espace"></span>)
+
+					</div>
+
+					<div class="btn btn-primary">
+						<div class="btn-title">
+							<%= t '.words_count' %>
+						</div>
+						<div id="nb_mots" class="btn-result">
+							0
+						</div>
+					</div>
+
+					<div class="btn btn-primary">
+						<div class="btn-title">
+							<%= t '.paragraphes_count' %>
+						</div>
+						<div id="nb_parag" class="btn-result">
+
+						</div>
+					</div>
+
+					<div class="btn btn-primary">
+						<div class="btn-title">
+							<%= t '.sentences_count' %>
+						</div>
+						<div id="nb_sentence" class="btn-result">
+							0
+						</div>
+					</div>
+					<div class="btn btn-primary" id="longest_sentence_container" data-toggle="tooltip" data-placement="bottom" data-title="Click to see the longest sentence">
+						<div class="btn-title">
+							<%= t '.longest_sentence' %>
+						</div>
+						<div id="longest_sentence" class="btn-result">
+
+						</div>
+					</div>
+					
+					
+
+
+				</div>
+			</section>
+		</div>
+		
+		
+		<div class="col-md-12" id="longest_sentence_text_container" style="display: none;">
+			<br />
+						<div class="text-info col-md-12">
+							<%= t '.longest_sentence' %> :
+						</div>
+						<span id="longest_sentence_text" class="btn-result col-md-12"></span>
+		</div>
+	
+	
+		
+
+		<div class="col-md-12">
+
+			<section id="time">
+
+				<h3 class="nadvence-header"><%= t '.h3_time' %></h3>
+				<div class="col-md-12 col-xs-12">
+					<div class="btn btn-primary">
+						<div class="intitule_big">
+							<%= t '.lecture_time' %>
+						</div>
+						<div id="temps_lecture" class="resultat_big">
+
+						</div>
+
+					</div>
+					<div class="btn btn-primary">
+						<div class="intitule_big">
+							<%= t '.writing_time' %>
+						</div>
+						<div id="temps_manuscrite" class="resultat_big">
+
+						</div>
+
+					</div>
+					<div class="btn btn-primary">
+						<div class="intitule_big">
+							<%= t '.taping_time' %>
+						</div>
+						<div id="temps_frappe" class="resultat_big">
+
+						</div>
+
+					</div>
+					<div class="btn btn-primary">
+						<div class="intitule_big">
+							<%= t '.elocution_time' %>
+						</div>
+						<div id="temps_elocution" class="resultat_big">
+
+						</div>
+
+					</div>
+				</div>
+			</section>
+		</div>
+
+		<div class="col-md-12">
+
+			<section id="size">
+
+				<h3 class="nadvence-header"><%= t '.h3_size' %></h3>
+
+				<div class="col-md-12 col-xs-12">
+
+					<div class="btn btn-primary">
+						<div class="intitule_big">
+							<%= t '.lines_size' %>
+						</div>
+						<div id="lignes_ordinateur" class="resultat_big">
+							0
+						</div>
+
+					</div>
+					<div class="btn btn-primary">
+						<div class="intitule_big">
+							<%= t '.pages_size' %>
+						</div>
+						<div id="pages_ordinateur" class="resultat_big">
+							0
+						</div>
+
+					</div>
+					<div class="btn btn-primary">
+						<div class="intitule_big">
+							<%= t '.paper_lines_size' %>
+						</div>
+						<div id="lignes_papier" class="resultat_big">
+							0
+						</div>
+
+					</div>
+					<div class="btn btn-primary">
+						<div class="intitule_big">
+							<%= t '.paper_pages_size' %>
+						</div>
+						<div id="pages_papier" class="resultat_big">
+							0
+						</div>
+
+					</div>
+				</div>
+
+			</section>
+
+		</div>
+
+		<div class="col-md-12">
+
+			<section id="frequency">
+
+				<h3 class="nadvence-header"><%= t '.h3_frequency' %></h3>
+
+				<div class="col-md-12">
+
+					<div class="btn btn-success" id="frequency_button">
+						<i class="glyphicon glyphicon-refresh"></i> <%= t '.frequency_calculation' %>
+					</div>
+					<br />
+					<br />
+					<div id="word_frequency">
+
+					</div>
+				</div>
+			</section>
+
+		</div>
+
+	</div>
+</div>
+
+<script>
+	function afficherCalcul() {
+		longueur = count();
+		$("#nb_mots").html(longueur);
+		$("#temps_lecture").html(temps(longueur, "lecture"));
+		$("#temps_frappe").html(temps(longueur, "frappe"));
+		$("#temps_manuscrite").html(temps(longueur, "manuscrite"));
+		$("#temps_elocution").html(temps(longueur, "elocution"))
+		twitter_length();
+		sentence();
+	}
+
+	function count() {
+		text = $(".champ_count").val();
+		text_no_modif = $(".champ_count").val();
+		text2 = text;
+		if ($("#apostrophes").prop("checked")) {
+			var e = new RegExp("[\\'\\’]", "gi");
+			text = text.replace(e, "")
+		} else {
+			var e = new RegExp("[\\'\\’]", "gi");
+			text = text.replace(e, " ")
+		}
+		if ($("#tiret").prop("checked")) {
+			var e = new RegExp("[\\-]", "gi");
+			text = text.replace(e, "")
+		} else {
+			var e = new RegExp("[\\-]", "gi");
+			text = text.replace(e, " ")
+		}
+		if ($("#stop_word").prop("checked")) {
+			var t;
+			var n;
+			var r;
+			var i;
+			var s = new Array("alors", "au", "aucuns", "aussi", "autre", "avant", "avec", "avoir", "bon", "car", "ce", "cela", "ces", "ceux", "chaque", "ci", "comme", "comment", "dans", "des", "du", "dedans", "dehors", "depuis", "deux", "devrait", "doit", "donc", "dos", "droite", "début", "elle", "elles", "en", "encore", "essai", "est", "et", "eu", "fait", "faites", "fois", "font", "force", "haut", "hors", "ici", "il", "ils", "je", "juste", "la", "le", "les", "leur", "là", "ma", "maintenant", "mais", "mes", "mine", "moins", "mon", "mot", "même", "ni", "nommés", "notre", "nous", "nouveaux", "ou", "où", "par", "parce", "parole", "pas", "personnes", "peut", "peu", "pièce", "plupart", "pour", "pourquoi", "quand", "que", "quel", "quelle", "quelles", "quels", "qui", "sa", "sans", "ses", "seulement", "si", "sien", "son", "sont", "sous", "soyez", "sujet", "sur", "ta", "tandis", "tellement", "tels", "tes", "ton", "tous", "tout", "trop", "très", "tu", "valeur", "voie", "voient", "vont", "votre", "vous", "vu", "ça", "étaient", "état", "étions", "été", "être");
+			for ( i = 0; i < s.length; i++) {
+				t = s[i];
+				n = "^\\s*" + t + "\\s*$";
+				n += "|^\\s*" + t + "\\s+";
+				n += "|\\s+" + t + "\\s*$";
+				n += "|\\s+" + t + "\\s+";
+				r = new RegExp(n, "gi");
+				text = text.replace(r, " ");
+				text2 = text2.replace(r, " ")
+			}
+		}
+		var o = new RegExp("[^\\w^àáâãäåçèéêëìíîïðòóôõöùúûüýÿ]", "gi");
+		text = text.replace(o, " ");
+		text = text.replace(/\s+/g, " ");
+		text = $.trim(text);
+		atext = text.split(" ");
+		var o = new RegExp("(\r\n|\r|\n)", "g");
+		text2 = text2.replace(o, "");
+		text2 = $.trim(text2);
+		if ($("#mot_cle").val() != "") {
+			var u = $("#mot_cle").val();
+			e = new RegExp("\\b" + u + "\\b", "g");
+			var a = text.match(e);
+			if (a) {
+				$("#mot_cle_resultat").html(a.length)
+			} else {
+				$("#mot_cle_resultat").html("0")
+			}
+		}
+		if ($("#mot_cle").val() == "" && $("#mot_cle_resultat").text() != "" || atext[atext.length - 1] == "") {
+			$("#mot_cle_resultat").html("0")
+		}
+		if (atext[atext.length - 1] == "") {
+			longueur = atext.length - 1
+		} else {
+			longueur = atext.length
+		}
+		var f = nbcaractere(false, text2);
+		$("#nb_caracteres").html(nbcaractere(true, text2));
+		$("#nb_caracteres_espace").html(f);
+		var l = Math.ceil(f / 78);
+		var c = Math.ceil(f / 41);
+		$("#lignes_ordinateur").html(l);
+		$("#lignes_papier").html(c);
+		$("#pages_ordinateur").html(Math.ceil(l / 42));
+		$("#pages_papier").html(Math.ceil(c / 31));
+		
+		return longueur
+	}
+
+	function nbcaractere(e, t) {
+		if (!e) {
+			t = t.replace(/\s+/g, "")
+		}
+		return t.length
+	}
+	
+	// Function that will ignore the words below
+	function ignore_word(word){
+		var ignore = ['and','the','to','a','of','for','as','i','with','it','is','on','that','this','can','in','be','has','if',"alors", "au", "aucuns", "aussi", "autre", "avant", "avec", "avoir", "bon", "car", "ce", "cela", "ces", "ceux", "chaque", "ci", "comme", "comment", "dans", "des", "du", "dedans", "dehors", "depuis", "deux", "devrait", "doit", "donc", "dos", "droite", "début", "elle", "elles", "en", "encore", "essai", "est", "et", "eu", "fait", "faites", "fois", "font", "force", "haut", "hors", "ici", "il", "ils", "je", "juste", "la", "le", "les", "leur", "là", "ma", "maintenant", "mais", "mes", "mine", "moins", "mon", "mot", "même", "ni", "nommés", "notre", "nous", "nouveaux", "ou", "où", "par", "parce", "parole", "pas", "personnes", "peut", "peu", "pièce", "plupart", "pour", "pourquoi", "quand", "que", "quel", "quelle", "quelles", "quels", "qui", "sa", "sans", "ses", "seulement", "si", "sien", "son", "sont", "sous", "soyez", "sujet", "sur", "ta", "tandis", "tellement", "tels", "tes", "ton", "tous", "tout", "trop", "très", "tu", "valeur", "voie", "voient", "vont", "votre", "vous", "vu", "ça", "étaient", "état", "étions", "été", "être"];
+		var iCount = ignore.length;
+		for (var i=0;i<iCount;i++){
+			if (ignore[i] == word){
+			return true
+			}
+		}
+		
+		return false
+	}
+	
+	// TWITTER LENGTH
+	
+	function twitter_length(){
+		text = $(".champ_count").val();
+		text2 = find_links_in_text(text);
+		max_twitter_count = 140;
+		text_count = text2.length;
+		
+		remaining = max_twitter_count - text_count;
+		if (remaining > 0) {
+		$('#twitter_length').html("<span class='btn btn-success btn-sm'>" + remaining + "</span>");
+		}else{
+			$('#twitter_length').html("<span class='btn btn-danger btn-sm'>" + remaining + "</span>");
+		}
+	}
+	
+	
+	function find_links_in_text(text){
+		var urlRegex = /(https?:\/\/[^\s]+)/g;
+    	text2 = text.replace(urlRegex, function(url) {
+        return '1111111111111111111';
+    	});
+    	return text2;
+		
+	}
+	
+	
+	// END OF TWITTER
+	
+	// SENTENCE
+
+		function sentence() {
+			var text = $('.champ_count').val();
+			var count = 0;
+			var j = 0;
+			var pattern = /[!?]/g;
+			text = text.replace(pattern, ".");
+			var parag = text.split("\n");
+
+			while (j != parag.length) {
+				if (parag[j] == "") {
+					count = count + 1;
+				}
+				j++
+			}
+			$("#nb_parag").html(parag.length - count)
+
+			var phrase = text.split(".")
+			$("#nb_sentence").html(phrase.length - 1)
+			var phrase_longue = "";
+
+			i = 0;
+
+			while (i != phrase.length) {
+				if (phrase[i].length >= phrase_longue.length) {
+					var phrase_longue = phrase[i];
+				}
+				i++
+			}
+			
+			$("#longest_sentence_container").tooltip();
+			
+			
+			$("#longest_sentence").html(strip(phrase_longue).length);
+			$("#longest_sentence_text").html(strip(phrase_longue));
+	
+
+		}
+
+	// END OF SENTENCE
+		// Remove HTML code inside of the code
+		function strip(html) {
+			var tmp = document.createElement("DIV");
+			tmp.innerHTML = html;
+			return tmp.textContent || tmp.innerText || "";
+		}
+
+	// WORD FREQUENCY
+	
+	// Function that return an array of hash(text, frequency) of length equal to size order by frequency. Words freqeuncy in champ count
+	function word_frequency(size){
+		text = $(".champ_count").val();
+		var sWords = text.toLowerCase().trim().replace(/[,;.]/g,'').split(/[\s\/]+/g).sort();
+		var iWordsCount = sWords.length;
+		
+ 
+		var counts = {}; // object for math
+		for (var i=0; i<iWordsCount; i++) {
+			var sWord = sWords[i];
+			if (!ignore_word(sWord)) {
+				counts[sWord] = counts[sWord] || 0;
+				counts[sWord]++;
+			}
+		}
+ 
+		var arr = []; // an array of objects to return
+		for (sWord in counts) {
+			arr.push({
+				text: sWord,
+				frequency: counts[sWord]
+			});
+		}
+	
+	// sort array by descending frequency | http://stackoverflow.com/a/8837505
+	var array_sorted =[]
+	array_sorted =  arr.sort(function(a,b){
+		return (a.frequency > b.frequency) ? -1 : ((a.frequency < b.frequency) ? 1 : 0);
+	});
+	
+	return array_sorted.slice(0, size);
+	
+	}
+	// http://www.synonymes.com/synonyme.php?mot=manger
+	// Print the word frequency result
+	
+	<% if I18n.locale.to_s == "fr" %> 
+	function print_word_frequency(array){
+		$("#word_frequency").html("<div	class='btn btn-primary'>" +array[0]['text'] + " : " + array[0]['frequency'] + "</div> <a target='_blank' href='http://www.synonymes.com/synonyme.php?mot=" + array[0]['text'] + "'> Synonyme" + "</a>");
+		array_length = array.length;
+		for (var i=1; i<array_length; i++) {
+			$("#word_frequency").append("<br/><div class='btn btn-primary'>" + array[i]['text'] + " : " + array[i]['frequency'] + "</div> <a target='_blank' href='http://www.synonymes.com/synonyme.php?mot=" + array[i]['text'] + "'> Synonyme" + "</a>");
+		}
+	}
+	<% else %>
+	function print_word_frequency(array){
+		$("#word_frequency").html("<div	class='btn btn-primary'>" +array[0]['text'] + " : " + array[0]['frequency'] + "</div> <a target='_blank' href='http://thesaurus.com/browse/" + array[0]['text'] + "'> Synonym" + "</a>");
+		array_length = array.length;
+		for (var i=1; i<array_length; i++) {
+			$("#word_frequency").append("<br/><div class='btn btn-primary'>" + array[i]['text'] + " : " + array[i]['frequency'] + "</div> <a target='_blank' href='http://thesaurus.com/browse/" + array[i]['text'] + "'> Synonym" + "</a>");
+		}
+	}
+	
+	<% end %>
+	
+	// END OF WORD FREQUENCY
+
+
+	function temps(e, t) {
+		var n = 0;
+		switch (t) {
+			case "lecture":
+				n = Math.ceil(e * 60 / 250);
+				break;
+			case "frappe":
+				n = Math.ceil(e * 60 / 40);
+				break;
+			case "manuscrite":
+				n = Math.ceil(e * 60 / 25);
+				break;
+			case "elocution":
+				n = Math.ceil(e * 60 / 150);
+				break
+		}
+		var r = n;
+		var i = 0;
+		var s = 0;
+		if (r >= 60) {
+			i = Math.floor(r / 60);
+			r = r % 60
+		}
+		if (i >= 60) {
+			s = Math.floor(i / 60);
+			i = i % 60
+		}
+		if (s > 0) {
+			return s + " h " + i + " min " + r + " s"
+		}
+		if (i > 0) {
+			return i + " min " + r + " s"
+		}
+		if (r >= 0) {
+			return r + " s"
+		}
+	}
+
+	$(function() {
+		afficherCalcul();
+		$(".champ_count").keyup(function() {
+			afficherCalcul()
+		});
+		$(".champ_count").change(function() {
+			afficherCalcul()
+		});
+		$("#mot_cle").keyup(function() {
+			afficherCalcul()
+		});
+		$("#mot_cle").change(function() {
+			afficherCalcul()
+		});
+		$(".option").change(function() {
+			afficherCalcul()
+		})
+		$('#frequency_button').click(function() {
+			print_word_frequency(word_frequency(20));
+		})
+		$("#longest_sentence_container").click(function() {
+				$("#longest_sentence_text_container").toggle();
+		});
+	})
+</script>

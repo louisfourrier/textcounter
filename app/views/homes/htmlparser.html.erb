@@ -1,0 +1,251 @@
+<h1 class="page-header">HtmlParser</h1>
+<p>
+	Just write in the textfield and the Html will be analysed.
+</p>
+<div class="row">
+	<div class="col-md-9">
+		
+		
+		
+		<%= form_tag("/homes/urlanalyse", method: "get", remote: true) do %>
+		<div class="input-group">
+			<span class="input-group-addon">URL</span>
+			<%= text_field_tag(:website_url, nil, :class => "form-control", placeholder: "http://") %>
+			<span class="input-group-btn"> <%= submit_tag("Analyse!", class: "btn btn-default") %> </span>
+		</div>
+		<% end %>
+
+
+		
+
+	
+		<h2>OU HTML</h2>
+
+		
+		
+		<textarea rows="12" class="col-md-12 champ_count" id="main_text" placeholder="<html></html>"></textarea>		
+		
+ <div id="code_test" hidden></div>
+
+</div>
+<div class="col-md-12">
+	<br />
+	<section id="basics">
+		<h2> Compteur de Balises :</h2>
+
+		<div class="btn btn-primary">
+			<div class="intitule">
+				Nombre de paragaphes :
+			</div>
+			<div id="nb_parag" class="resultat">
+
+			</div>
+
+		</div>
+		<div class="btn btn-primary">
+			<div class="intitule">
+				Nombres de div:
+			</div>
+			<div id="nb_div" class="resultat">
+
+			</div>
+		</div>
+		<div class="btn btn-primary">
+			<div class="intitule">
+				Nombres de span:
+			</div>
+			<div id="nb_span" class="resultat">
+
+			</div>
+		</div>
+
+	</section>
+</div>
+
+<div class="col-md-12">
+	<br />
+	<section id="links">
+		<h2> Liens :</h2>
+		<div class="btn btn-primary">
+			<div class="btn-title">
+				Nombre de liens :
+			</div>
+			<div id="nb_links" class="btn-result">
+
+			</div>
+		</div>
+		<div class="btn btn-primary">
+			<div class="intitule">
+				Tableau des liens:
+			</div>
+			<div id="link_array" class="resultat">
+
+			</div>
+		</div>
+
+	</section>
+</div>
+
+<div class="col-md-12">
+	<br />
+	<h2> Titres</h2>
+	<section id="basic">
+		<div class="btn btn-primary">
+			<div class="btn-title">
+				Nombre H1 :
+			</div>
+			<div id="nb_h1" class="btn-result">
+
+			</div>
+		</div>
+		<div class="btn btn-primary">
+			<div class="btn-title">
+				Nombre H2 :
+			</div>
+			<div id="nb_h2" class="btn-result">
+
+			</div>
+		</div>
+		<div class="btn btn-primary">
+			<div class="btn-title">
+				Nombre H3 :
+			</div>
+			<div id="nb_h3" class="btn-result">
+
+			</div>
+		</div>
+		<div class="btn btn-primary">
+			<div class="btn-title">
+				Nombre H4 :
+			</div>
+			<div id="nb_h4" class="btn-result">
+
+			</div>
+		</div>
+		<div class="btn btn-primary">
+			<div class="btn-title">
+				Nombre H5 :
+			</div>
+			<div id="nb_h5" class="btn-result">
+
+			</div>
+		</div>
+
+		<div class="btn btn-primary">
+			<div class="btn-title">
+				Hierarchie :
+			</div>
+			<div id="hierarchy" class="btn-result">
+
+			</div>
+		</div>
+
+	</section>
+</div>
+
+
+
+<script>
+
+	function central_actions(){
+		insert_in_code_div();
+		get_links();
+		$('#nb_parag').html(nb_balise('p'));
+		$('#nb_div').html(nb_balise('div'));
+		$('#nb_span').html(nb_balise('span'));
+		
+		$('#nb_h1').html(nb_balise('h1'));
+		$('#nb_h2').html(nb_balise('h2'));
+		$('#nb_h3').html(nb_balise('h3'));
+		$('#nb_h4').html(nb_balise('h4'));
+		$('#nb_h5').html(nb_balise('h5'));
+		//HTMLInspector.inspect('#code_test');
+		get_hierarchy();
+
+	}
+	
+	function insert_in_code_div(){
+		text = $("#main_text").val();
+		$('#code_test').html(text);
+	}
+	
+	function get_links(){
+		nb_links = $('#code_test a').length;
+		$('#nb_links').html(nb_links);
+		$('#link_array').html('');
+		$('#code_test a').each(function (){
+			$('#link_array').append($(this).attr('href') + "<br/>");
+		})
+	}
+	
+	
+	function get_hierarchy(){
+			var $result = $('<div/>');
+			var curDepth = 0;
+			
+			$('#code_test h1,h2,h3,h4,h5,h6').addClass('heading');
+			$('.heading').each(function() {
+			
+			var $li = $('<li/>').text($(this).text());
+			
+			var depth = parseInt(this.tagName.substring(1));
+			
+			if(depth > curDepth) { // going deeper
+			
+			$result.append($('<ol/>').append($li));
+			$result = $li;
+			
+			} else if (depth < curDepth) { // going shallower
+			
+			$result.parents('ol:eq(' + (curDepth - depth - 0) + ')').append($li);
+			$result = $li;
+			
+			} else { // same level
+			
+			$result.parent().append($li);
+			$result = $li;
+			
+			}
+			
+			curDepth = depth;
+			
+			});
+			
+			$result = $result.parents('ol:last');
+			
+			// clean up
+			$('h1,h2,h3,h4,h5,h6').removeClass('heading');
+			$('#hierarchy').html($result);
+	}
+	
+	
+	
+	function nb_balise(name){
+		container = "#code_test ";
+		selector = container + name;
+		nb_occu = $(selector).length;
+		return nb_occu
+	}
+	
+	function analyse_url() {
+		url_text = $('#website_url').val();
+		alert(url_text);
+		$.ajax({
+		    url : url_text,
+		    success : function(result){
+		        $("#main_text").val(result);
+		    }
+		});
+	}
+
+	$(function() {
+		central_actions()
+		$(".champ_count").keyup(function() {
+			central_actions();
+		});
+		$(".champ_count").change(function() {
+			central_actions();
+		});
+		
+	})
+</script>

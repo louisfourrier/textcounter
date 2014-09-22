@@ -6231,44 +6231,44 @@ button.close {
 }
 /* Sticky footer styles
 -------------------------------------------------- */
-/* line 9, /Users/louisfourrier/Desktop/StartUp/textcounter/app/assets/stylesheets/homes.css.scss */
+/* line 9, /Users/louisfourrier/Desktop/StartUp/textcounter/app/assets/stylesheets/homes.css.scss.erb */
 html {
   position: relative;
   min-height: 100%;
 }
 
-/* line 13, /Users/louisfourrier/Desktop/StartUp/textcounter/app/assets/stylesheets/homes.css.scss */
+/* line 13, /Users/louisfourrier/Desktop/StartUp/textcounter/app/assets/stylesheets/homes.css.scss.erb */
 body {
   height: 100%;
   font-family: 'open-sans';
 }
 
-/* line 19, /Users/louisfourrier/Desktop/StartUp/textcounter/app/assets/stylesheets/homes.css.scss */
+/* line 19, /Users/louisfourrier/Desktop/StartUp/textcounter/app/assets/stylesheets/homes.css.scss.erb */
 .navbar-nadvence {
   color: grey;
   background-color: white;
   border-bottom: 1px solid #e7e7e7 !important;
 }
 
-/* line 25, /Users/louisfourrier/Desktop/StartUp/textcounter/app/assets/stylesheets/homes.css.scss */
+/* line 25, /Users/louisfourrier/Desktop/StartUp/textcounter/app/assets/stylesheets/homes.css.scss.erb */
 .navbar-brand {
   color: #28c3ab !important;
   font-size: inherit;
 }
 
-/* line 32, /Users/louisfourrier/Desktop/StartUp/textcounter/app/assets/stylesheets/homes.css.scss */
+/* line 32, /Users/louisfourrier/Desktop/StartUp/textcounter/app/assets/stylesheets/homes.css.scss.erb */
 .navbar-nav li {
   font-size: 16px;
 }
 
-/* line 37, /Users/louisfourrier/Desktop/StartUp/textcounter/app/assets/stylesheets/homes.css.scss */
+/* line 37, /Users/louisfourrier/Desktop/StartUp/textcounter/app/assets/stylesheets/homes.css.scss.erb */
 h1.navbar-h1 {
   margin: 0px;
   font-size: 30px;
   padding-bottom: 10px;
 }
 
-/* line 43, /Users/louisfourrier/Desktop/StartUp/textcounter/app/assets/stylesheets/homes.css.scss */
+/* line 43, /Users/louisfourrier/Desktop/StartUp/textcounter/app/assets/stylesheets/homes.css.scss.erb */
 textarea#main_text {
   font-size: 16px;
   border: 2px solid #e7e7e7;
@@ -6276,14 +6276,14 @@ textarea#main_text {
   padding: 5px;
 }
 
-/* line 50, /Users/louisfourrier/Desktop/StartUp/textcounter/app/assets/stylesheets/homes.css.scss */
+/* line 50, /Users/louisfourrier/Desktop/StartUp/textcounter/app/assets/stylesheets/homes.css.scss.erb */
 .nadvence-header {
   color: #28c3ab !important;
 }
 
 /* Smartphones (portrait) ----------- */
 @media only screen and (max-width: 992px) {
-  /* line 57, /Users/louisfourrier/Desktop/StartUp/textcounter/app/assets/stylesheets/homes.css.scss */
+  /* line 57, /Users/louisfourrier/Desktop/StartUp/textcounter/app/assets/stylesheets/homes.css.scss.erb */
   .side-column {
     background-color: #f7f7f7;
     height: 100%;
@@ -6295,7 +6295,7 @@ textarea#main_text {
   }
 }
 @media only screen and (min-width: 992px) {
-  /* line 70, /Users/louisfourrier/Desktop/StartUp/textcounter/app/assets/stylesheets/homes.css.scss */
+  /* line 70, /Users/louisfourrier/Desktop/StartUp/textcounter/app/assets/stylesheets/homes.css.scss.erb */
   .side-column {
     background-color: #f7f7f7;
     height: 100%;
@@ -6309,28 +6309,28 @@ textarea#main_text {
     padding-bottom: 50px;
   }
 }
-/* line 88, /Users/louisfourrier/Desktop/StartUp/textcounter/app/assets/stylesheets/homes.css.scss */
+/* line 88, /Users/louisfourrier/Desktop/StartUp/textcounter/app/assets/stylesheets/homes.css.scss.erb */
 #main_text {
   width: 100%;
 }
 
-/* line 92, /Users/louisfourrier/Desktop/StartUp/textcounter/app/assets/stylesheets/homes.css.scss */
+/* line 92, /Users/louisfourrier/Desktop/StartUp/textcounter/app/assets/stylesheets/homes.css.scss.erb */
 .btn {
   margin-top: 5px;
 }
 
-/* line 96, /Users/louisfourrier/Desktop/StartUp/textcounter/app/assets/stylesheets/homes.css.scss */
+/* line 96, /Users/louisfourrier/Desktop/StartUp/textcounter/app/assets/stylesheets/homes.css.scss.erb */
 .main-container {
   margin-top: 50px;
   height: 100%;
 }
 
-/* line 104, /Users/louisfourrier/Desktop/StartUp/textcounter/app/assets/stylesheets/homes.css.scss */
+/* line 104, /Users/louisfourrier/Desktop/StartUp/textcounter/app/assets/stylesheets/homes.css.scss.erb */
 input[type=checkbox].css-checkbox {
   display: none;
 }
 
-/* line 108, /Users/louisfourrier/Desktop/StartUp/textcounter/app/assets/stylesheets/homes.css.scss */
+/* line 108, /Users/louisfourrier/Desktop/StartUp/textcounter/app/assets/stylesheets/homes.css.scss.erb */
 input[type=checkbox].css-checkbox + label.css-label {
   padding-left: 25px;
   height: 20px;
@@ -6342,15 +6342,15 @@ input[type=checkbox].css-checkbox + label.css-label {
   cursor: pointer;
 }
 
-/* line 120, /Users/louisfourrier/Desktop/StartUp/textcounter/app/assets/stylesheets/homes.css.scss */
+/* line 120, /Users/louisfourrier/Desktop/StartUp/textcounter/app/assets/stylesheets/homes.css.scss.erb */
 input[type=checkbox].css-checkbox:checked + label.css-label {
   background-position: 0 -20px;
 }
 
-/* line 123, /Users/louisfourrier/Desktop/StartUp/textcounter/app/assets/stylesheets/homes.css.scss */
+/* line 123, /Users/louisfourrier/Desktop/StartUp/textcounter/app/assets/stylesheets/homes.css.scss.erb */
 label.css-label {
   margin: 2px;
-  background-image: url(checkbox_green_nadvence.png);
+  background-image: url(/assets/checkbox_green_nadvence.png);
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;

@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap
+//= require hightlight
 //= require turbolinks
 //= require htmlinspector
 //= require_tree .

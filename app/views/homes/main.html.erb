@@ -4,23 +4,27 @@
 
 <div class="row" style="height: 100%;">
 	<div class="col-md-6 col-xs-12">
-		
+
 		<br />
 		<div class="row">
 
 			<div class="col-md-12">
 				<div id="option">
-					
-					<input type="checkbox" id="apostrophes" name="apostrophes" class="option css-checkbox">
-					<label for="apostrophes" class="css-label"><span></span><%= t '.apostrophe' %></label>
 
-					<input type="checkbox" id="tiret" name="tiret" class="option css-checkbox">
-					<label for="tiret" class="css-label"><span></span><%= t '.tiret' %></label>
+					<div class="col-md-4 col-xs-12">
+						<input type="checkbox" id="apostrophes" name="apostrophes" class="option css-checkbox">
+						<label for="apostrophes" class="css-label"><span></span><%= t '.apostrophe' %></label>
+					</div>
+					<div class="col-md-4 col-xs-12">
+						<input type="checkbox" id="tiret" name="tiret" class="option css-checkbox">
+						<label for="tiret" class="css-label"><span></span><%= t '.tiret' %></label>
+					</div>
 
-					<input type="checkbox" id="stop_word" name="stop_word" class="option css-checkbox">
-					<label for="stop_word" class="css-label"><span></span><%= t '.stop_word' %></label>
+					<div class="col-md-4 col-xs-12">
+						<input type="checkbox" id="stop_word" name="stop_word" class="option css-checkbox">
+						<label for="stop_word" class="css-label"><span></span><%= t '.stop_word' %></label>
+					</div>
 
-					
 				</div>
 			</div>
 
@@ -28,30 +32,28 @@
 			<br/>
 			<div class="col-md-12">
 				<textarea rows="20" class="col-md-12 champ_count" id="main_text" placeholder="<%= t '.placeholder' %>"></textarea>
-				<span> <%= t '.twitter_character' %> </span><span id="twitter_length"></span>
+				
+				
+ <span> <%= t '.twitter_character' %> </span><span id="twitter_length"></span>
 			</div>
-			
-			
+
 			<div class="col-md-12">
-			<h3 class="nadvence-header"><%= t '.h3_socialshare' %></h3>
-			
-			<a href="https://facebook.com/sharer.php?u=http://nadvence.com" class="no_underline" target="_blank">
-			<div class="btn btn-primary facebook-back modify-btn">
-				<i class="fa fa-facebook"></i> Facebook
-			</div>
-			</a>
-			
-			<a href="https://twitter.com/intent/tweet?url=YOURURLHERE&text=YOURPOSTTITLEHERE&via=YOURTWITTERNAMEHERE" class="no_underline" target="_blank">
-			<div class="btn btn-primary twitter-back modify-btn">
-				<i class="fa fa-twitter"></i> Twitter
-			</div>
-			</a>
-			
-			<a href="https://plus.google.com/share?url=http://nadvence.com" class="no_underline" target="_blank">
-			<div class="btn btn-primary google-plus-back modify-btn">
-				<i class="fa fa-google-plus"></i> Google +
-			</div>
-			</a>
+				<h3 class="nadvence-header"><%= t '.h3_socialshare' %></h3>
+
+				<a href="https://facebook.com/sharer.php?u=http://nadvence.com" class="no_underline" target="_blank">
+				<div class="btn btn-primary facebook-back modify-btn">
+					<i class="fa fa-facebook"></i> Facebook
+				</div> </a>
+
+				<a href="https://twitter.com/intent/tweet?url=YOURURLHERE&text=YOURPOSTTITLEHERE&via=YOURTWITTERNAMEHERE" class="no_underline" target="_blank">
+				<div class="btn btn-primary twitter-back modify-btn">
+					<i class="fa fa-twitter"></i> Twitter
+				</div> </a>
+
+				<a href="https://plus.google.com/share?url=http://nadvence.com" class="no_underline" target="_blank">
+				<div class="btn btn-primary google-plus-back modify-btn">
+					<i class="fa fa-google-plus"></i> Google +
+				</div> </a>
 			</div>
 
 		</div>
@@ -61,11 +63,9 @@
 	<div class="col-md-6 col-xs-12 side-column">
 		<div class="col-md-12">
 
-
-			<section id="basic">
 				<h3 class="nadvence-header"><%= t '.h3_count' %></h3>
 
-				<div class="col-md-12 col-xs-12">
+				
 
 					<div class="btn btn-primary">
 						<div class="intitule">
@@ -110,32 +110,25 @@
 
 						</div>
 					</div>
-					
-					
 
+			
 
-				</div>
-			</section>
 		</div>
-		
-		
+
 		<div class="col-md-12" id="longest_sentence_text_container" style="display: none;">
 			<br />
-						<div class="text-info col-md-12">
-							<%= t '.longest_sentence' %> :
-						</div>
-						<span id="longest_sentence_text" class="btn-result col-md-12"></span>
+			<div class="text-info col-md-12">
+				<%= t '.longest_sentence' %> :
+			</div>
+			<span id="longest_sentence_text" class="btn-result col-md-12"></span>
 		</div>
-	
-	
-		
 
 		<div class="col-md-12">
 
-			<section id="time">
+			
 
 				<h3 class="nadvence-header"><%= t '.h3_time' %></h3>
-				<div class="col-md-12 col-xs-12">
+			
 					<div class="btn btn-primary">
 						<div class="intitule_big">
 							<%= t '.lecture_time' %>
@@ -172,17 +165,15 @@
 						</div>
 
 					</div>
-				</div>
-			</section>
+			
+	
 		</div>
 
 		<div class="col-md-12">
 
-			<section id="size">
-
 				<h3 class="nadvence-header"><%= t '.h3_size' %></h3>
 
-				<div class="col-md-12 col-xs-12">
+				
 
 					<div class="btn btn-primary">
 						<div class="intitule_big">
@@ -220,19 +211,19 @@
 						</div>
 
 					</div>
-				</div>
+			
 
-			</section>
+
 
 		</div>
 
 		<div class="col-md-12">
 
-			<section id="frequency">
+	
 
 				<h3 class="nadvence-header"><%= t '.h3_frequency' %></h3>
 
-				<div class="col-md-12">
+				
 
 					<div class="btn btn-success" id="frequency_button">
 						<i class="glyphicon glyphicon-refresh"></i> <%= t '.frequency_calculation' %>
@@ -242,8 +233,8 @@
 					<div id="word_frequency">
 
 					</div>
-				</div>
-			</section>
+				
+	
 
 		</div>
 
@@ -251,6 +242,18 @@
 </div>
 
 <script>
+
+	function hightlight_words(){
+		$('.word_freq').click(function() {
+			alert($(this).data("text"));
+			$('#main_text').highlightTextarea({
+    			words: [$(this).data("text")]
+  			});
+  		 
+  		});
+  		
+	}
+	
 	function afficherCalcul() {
 		longueur = count();
 		$("#nb_mots").html(longueur);
@@ -473,18 +476,18 @@
 	
 	<% if I18n.locale.to_s == "fr" %> 
 	function print_word_frequency(array){
-		$("#word_frequency").html("<div	class='btn btn-primary'>" +array[0]['text'] + " : " + array[0]['frequency'] + "</div> <a target='_blank' href='http://www.synonymes.com/synonyme.php?mot=" + array[0]['text'] + "'> Synonyme" + "</a>");
+		$("#word_frequency").html("<div	class='btn btn-primary word_freq' data-text='" + array[0]['text'] + "' >" + array[0]['text'] + " : " + array[0]['frequency'] + "</div> <a target='_blank' href='http://www.synonymes.com/synonyme.php?mot=" + array[0]['text'] + "'> Synonyme" + "</a>");
 		array_length = array.length;
 		for (var i=1; i<array_length; i++) {
-			$("#word_frequency").append("<br/><div class='btn btn-primary'>" + array[i]['text'] + " : " + array[i]['frequency'] + "</div> <a target='_blank' href='http://www.synonymes.com/synonyme.php?mot=" + array[i]['text'] + "'> Synonyme" + "</a>");
+			$("#word_frequency").append("<br/><div class='btn btn-primary word_freq' data-text='" + array[i]['text'] + "' >" + array[i]['text'] + " : " + array[i]['frequency'] + "</div> <a target='_blank' href='http://www.synonymes.com/synonyme.php?mot=" + array[i]['text'] + "'> Synonyme" + "</a>");
 		}
 	}
 	<% else %>
 	function print_word_frequency(array){
-		$("#word_frequency").html("<div	class='btn btn-primary'>" +array[0]['text'] + " : " + array[0]['frequency'] + "</div> <a target='_blank' href='http://thesaurus.com/browse/" + array[0]['text'] + "'> Synonym" + "</a>");
+		$("#word_frequency").html("<div	class='btn btn-primary word_freq' data-text='" + array[0]['text'] + "' + >" + array[0]['text'] + " : " + array[0]['frequency'] + "</div> <a target='_blank' href='http://thesaurus.com/browse/" + array[0]['text'] + "'> Synonym" + "</a>");
 		array_length = array.length;
 		for (var i=1; i<array_length; i++) {
-			$("#word_frequency").append("<br/><div class='btn btn-primary'>" + array[i]['text'] + " : " + array[i]['frequency'] + "</div> <a target='_blank' href='http://thesaurus.com/browse/" + array[i]['text'] + "'> Synonym" + "</a>");
+			$("#word_frequency").append("<br/><div class='btn btn-primary word_freq' data-text='" + array[i]['text'] + "' >" + array[i]['text'] + " : " + array[i]['frequency'] + "</div> <a target='_blank' href='http://thesaurus.com/browse/" + array[i]['text'] + "'> Synonym" + "</a>");
 		}
 	}
 	
@@ -500,7 +503,7 @@
 				n = Math.ceil(e * 60 / 250);
 				break;
 			case "frappe":
-				n = Math.ceil(e * 60 / 40);
+				n = Math.ceil(e * 60 / 46);
 				break;
 			case "manuscrite":
 				n = Math.ceil(e * 60 / 25);
@@ -550,9 +553,14 @@
 		})
 		$('#frequency_button').click(function() {
 			print_word_frequency(word_frequency(20));
-		})
+			hightlight_words();
+		});
+		
 		$("#longest_sentence_container").click(function() {
 				$("#longest_sentence_text_container").toggle();
 		});
+		
+		
+		
 	})
 </script>
